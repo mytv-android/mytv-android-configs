@@ -1,6 +1,7 @@
 import { ViteSSG } from 'vite-ssg'
 import { setupLayouts } from 'virtual:generated-layouts'
 
+import { createWebHashHistory } from 'vue-router'
 import { routes } from 'vue-router/auto-routes'
 import App from './App.vue'
 import type { UserModule } from './types'
@@ -15,6 +16,7 @@ export const createApp = ViteSSG(
   {
     routes: setupLayouts(routes),
     base: import.meta.env.BASE_URL,
+    history: createWebHashHistory(),
   },
   (ctx) => {
     // install all modules under `modules/`

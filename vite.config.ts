@@ -16,8 +16,15 @@ import Shiki from '@shikijs/markdown-it'
 import WebfontDownload from 'vite-plugin-webfont-dl'
 import VueRouter from 'unplugin-vue-router/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
+import { VantResolver } from '@vant/auto-import-resolver'
 
 export default defineConfig({
+  base: '/remote-configs',
+
+  server: {
+    host: '0.0.0.0',
+  },
+
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
@@ -61,6 +68,7 @@ export default defineConfig({
         'src/stores',
       ],
       vueTemplate: true,
+      resolvers: [VantResolver()],
     }),
 
     // https://github.com/antfu/unplugin-vue-components
@@ -70,6 +78,7 @@ export default defineConfig({
       // allow auto import and register components used in markdown
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       dts: 'src/components.d.ts',
+      resolvers: [VantResolver()],
     }),
 
     // https://github.com/antfu/unocss
@@ -104,8 +113,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'safari-pinned-tab.svg'],
       manifest: {
-        name: 'Vitesse',
-        short_name: 'Vitesse',
+        name: '天光云影',
+        short_name: '天光云影',
         theme_color: '#ffffff',
         icons: [
           {

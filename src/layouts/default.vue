@@ -1,12 +1,19 @@
+<script setup lang="ts">
+const router = useRouter()
+const route = useRoute()
+
+function onClickLeft() {
+  router.back()
+}
+</script>
+
 <template>
-  <main
-    px-4 py-10
-    text="center gray-700 dark:gray-200"
-  >
-    <RouterView />
-    <TheFooter />
-    <div mx-auto mt-5 text-center text-sm opacity-50>
-      [Default Layout]
+  <VanConfigProvider :theme="isDark ? 'dark' : undefined">
+    <VanNavBar :title="route.meta.title" left-text="返回" left-arrow placeholder fixed @click-left="onClickLeft" />
+    <div class="py-4">
+      <Suspense>
+        <RouterView />
+      </Suspense>
     </div>
-  </main>
+  </VanConfigProvider>
 </template>

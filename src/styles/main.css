@@ -8,6 +8,10 @@ body,
   padding: 0;
 }
 
+html {
+  background: #fafafa;
+}
+
 html.dark {
   background: #121212;
   color-scheme: dark;
@@ -26,4 +30,9 @@ html.dark {
   left: 0;
   width: 100%;
   height: 2px;
+}
+
+textarea {
+  white-space: nowrap;
+  overflow: auto;
 }

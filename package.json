@@ -3,8 +3,8 @@
   "private": true,
   "packageManager": "pnpm@9.8.0",
   "scripts": {
-    "build": "vite-ssg build",
-    "dev": "vite --port 3333 --open",
+    "build": "vite build",
+    "dev": "vite --port 3333",
     "lint": "eslint .",
     "preview": "vite preview",
     "preview-https": "serve dist",
@@ -19,12 +19,16 @@
   "dependencies": {
     "@unhead/vue": "^1.10.0",
     "@unocss/reset": "^0.62.2",
+    "@vant/auto-import-resolver": "^1.2.1",
     "@vueuse/core": "^11.0.1",
     "@vueuse/head": "^2.0.0",
+    "dayjs": "^1.11.13",
     "nprogress": "^0.2.0",
     "pinia": "^2.2.2",
+    "vant": "^4.9.8",
     "vue": "^3.4.38",
     "vue-demi": "^0.14.10",
+    "vue-draggable-plus": "^0.5.4",
     "vue-i18n": "^9.14.0",
     "vue-router": "^4.4.3"
   },
