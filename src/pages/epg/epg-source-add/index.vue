@@ -10,7 +10,7 @@ const epgSource = ref<EpgSource>({
 })
 
 async function addEpgSource() {
-  configs.data.epgSourceList = { value: [...configs.data.epgSourceList?.value ?? [], epgSource.value] }
+  configs.data.value.epgSourceList = { value: [...configs.data.value.epgSourceList?.value ?? [], epgSource.value] }
   await configs.update()
   router.back()
 }

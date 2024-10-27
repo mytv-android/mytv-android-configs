@@ -10,7 +10,7 @@ function addIptvSource() {
 <template>
   <VanCellGroup inset>
     <VanCell
-      v-for="source, i in configs.data.iptvSourceList?.value" :key="i" :label="source.url"
+      v-for="source, i in configs.data.value.iptvSourceList?.value" :key="i" :label="source.url"
       is-link center :to="`iptv-source-detail/${i}`"
     >
       <template #title>

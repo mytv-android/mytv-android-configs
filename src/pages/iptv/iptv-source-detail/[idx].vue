@@ -7,7 +7,7 @@ const route = useRoute()
 const configs = useConfigsStore()
 const { idx } = route.params as { idx: number }
 
-const iptvSource = computed<IptvSource & { content?: string } | undefined>(() => configs.data.iptvSourceList?.value[idx])
+const iptvSource = computed<IptvSource & { content?: string } | undefined>(() => configs.data.value.iptvSourceList?.value[idx])
 
 watch(iptvSource, async (val) => {
   if (!val)
@@ -28,13 +28,13 @@ async function saveIptvSource() {
 }
 
 async function deleteIptvSource() {
-  configs.data.iptvSourceList?.value.splice(idx, 1)
+  configs.data.value.iptvSourceList?.value.splice(idx, 1)
   await configs.update()
   router.back()
 }
 
 async function switchIptvSource() {
-  configs.data.iptvSourceCurrent = iptvSource.value
+  configs.data.value.iptvSourceCurrent = iptvSource.value
   await configs.update()
   router.back()
 }

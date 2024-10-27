@@ -2,17 +2,17 @@
 const configs = useConfigsStore()
 
 watch(configs, () => {
-  if (!configs.data.themeAppCurrent) {
-    configs.data.themeAppCurrent = { name: '', background: '' }
+  if (!configs.data.value.themeAppCurrent) {
+    configs.data.value.themeAppCurrent = { name: '', background: '' }
   }
 })
 </script>
 
 <template>
-  <VanCellGroup v-if="configs.data.themeAppCurrent" inset>
+  <VanCellGroup v-if="configs.data.value.themeAppCurrent" inset>
     <VanCell title="主题名称" center>
       <template #value>
-        <VanField v-model="configs.data.themeAppCurrent.name" input-align="right" />
+        <VanField v-model="configs.data.value.themeAppCurrent.name" input-align="right" />
       </template>
     </VanCell>
 
@@ -31,7 +31,7 @@ watch(configs, () => {
       </template>
 
       <template #value>
-        <VanField v-model="configs.data.themeAppCurrent.background" input-align="right" />
+        <VanField v-model="configs.data.value.themeAppCurrent.background" input-align="right" />
       </template>
     </VanCell>
 
@@ -50,13 +50,13 @@ watch(configs, () => {
       </template>
 
       <template #value>
-        <VanField v-model="configs.data.themeAppCurrent.texture" input-align="right" />
+        <VanField v-model="configs.data.value.themeAppCurrent.texture" input-align="right" />
       </template>
     </VanCell>
 
     <VanCell title="贴图透明度" center>
       <template #value>
-        <VanField v-model="configs.data.themeAppCurrent.textureAlpha" type="number" input-align="right" />
+        <VanField v-model="configs.data.value.themeAppCurrent.textureAlpha" type="number" input-align="right" />
       </template>
     </VanCell>
 

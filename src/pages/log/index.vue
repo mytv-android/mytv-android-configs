@@ -6,13 +6,13 @@ import { AppApi } from '~/apis/app'
 const logs = ref<AppLog[]>([])
 
 onMounted(async () => {
-  logs.value = await AppApi.getLogs()
+  logs.value = (await AppApi.getLogs()).reverse()
 })
 </script>
 
 <template>
   <VanCellGroup inset>
-    <VanCell v-for="log in logs.reverse()" :key="log.time" :title="`${log.level} | ${log.tag}`" :value="dayjs(log.time).format('HH:mm:ss')">
+    <VanCell v-for="log in logs" :key="log.time" :title="`${log.level} | ${log.tag}`" :value="dayjs(log.time).format('HH:mm:ss')">
       <template #label>
         <div class="flex flex-col">
           <div>{{ log.message }}</div>

@@ -6,19 +6,19 @@ const configs = useConfigsStore()
   <VanCellGroup inset>
     <VanCell title="数字选台" center>
       <template #value>
-        <VanSwitch v-model="configs.data.iptvChannelNoSelectEnable" />
+        <VanSwitch v-model="configs.data.value.iptvChannelNoSelectEnable" />
       </template>
     </VanCell>
 
     <VanCell title="换台反转" center>
       <template #value>
-        <VanSwitch v-model="configs.data.iptvChannelChangeFlip" />
+        <VanSwitch v-model="configs.data.value.iptvChannelChangeFlip" />
       </template>
     </VanCell>
 
     <VanCell title="换台列表首尾循环" center>
       <template #value>
-        <VanSwitch v-model="configs.data.iptvChannelChangeListLoop" />
+        <VanSwitch v-model="configs.data.value.iptvChannelChangeListLoop" />
       </template>
     </VanCell>
 

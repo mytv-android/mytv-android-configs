@@ -1,6 +1,4 @@
 <script setup lang="ts">
-useConfigsStore()
-showLoadingToast({ duration: 1 })
 </script>
 
 <template>

@@ -18,23 +18,23 @@ const iptvHybridModePickerData = Object.entries(IptvHybridModeLabels).map(it => 
     <VanCell title="自定义直播源" is-link center to="iptv/iptv-source-list">
       <template #value>
         <div class="flex items-center justify-end gap-2">
-          <VanTag v-if="configs.data.iptvSourceCurrent?.isLocal" plain type="warning" class="flex-none">
+          <VanTag v-if="configs.data.value.iptvSourceCurrent?.isLocal" plain type="warning" class="flex-none">
             本地
           </VanTag>
           <VanTag v-else plain type="primary" class="flex-none">
             远程
           </VanTag>
 
-          {{ configs.data.iptvSourceCurrent?.name }}
+          {{ configs.data.value.iptvSourceCurrent?.name }}
         </div>
       </template>
     </VanCell>
 
     <VanCell title="直播源缓存时间" center is-link>
       <template #value>
-        <SimplePicker v-model:value="configs.data.iptvSourceCacheTime" :columns="iptvSourceCacheTimePickerData">
+        <SimplePicker v-model:value="configs.data.value.iptvSourceCacheTime" :columns="iptvSourceCacheTimePickerData">
           <VanField
-            :model-value="iptvSourceCacheTimePickerData.find(it => it.value === configs.data.iptvSourceCacheTime)?.text ?? `${configs.data.iptvSourceCacheTime}ms`"
+            :model-value="iptvSourceCacheTimePickerData.find(it => it.value === configs.data.value.iptvSourceCacheTime)?.text ?? `${configs.data.value.iptvSourceCacheTime}ms`"
             input-align="right" readonly
           />
         </SimplePicker>
@@ -47,7 +47,7 @@ const iptvHybridModePickerData = Object.entries(IptvHybridModeLabels).map(it => 
 
     <VanCell title="相似频道合并" center>
       <template #value>
-        <VanSwitch v-model="configs.data.iptvSimilarChannelMerge" />
+        <VanSwitch v-model="configs.data.value.iptvSimilarChannelMerge" />
       </template>
     </VanCell>
 
@@ -66,20 +66,20 @@ const iptvHybridModePickerData = Object.entries(IptvHybridModeLabels).map(it => 
       </template>
 
       <template #value>
-        <VanField v-model="configs.data.iptvChannelLogoProvider" input-align="right" />
+        <VanField v-model="configs.data.value.iptvChannelLogoProvider" input-align="right" />
       </template>
     </VanCell>
 
     <VanCell title="混合模式" center is-link>
       <template #value>
-        <SimplePicker v-model:value="configs.data.iptvHybridMode" :columns="iptvHybridModePickerData">
-          <VanField :model-value="IptvHybridModeLabels[configs.data.iptvHybridMode!]" input-align="right" readonly />
+        <SimplePicker v-model:value="configs.data.value.iptvHybridMode" :columns="iptvHybridModePickerData">
+          <VanField :model-value="IptvHybridModeLabels[configs.data.value.iptvHybridMode!]" input-align="right" readonly />
         </SimplePicker>
       </template>
     </VanCell>
 
     <VanCell
-      title="收藏频道" :value="`共${configs.data.iptvChannelFavoriteList?.value.length}个`" is-link
+      title="收藏频道" :value="`共${configs.data.value.iptvChannelFavoriteList?.value.length}个`" is-link
       to="iptv/favorites"
     />
 

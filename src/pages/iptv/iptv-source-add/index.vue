@@ -25,7 +25,7 @@ async function addIptvSource() {
     iptvSource.value.url = path
   }
 
-  configs.data.iptvSourceList = { value: [...configs.data.iptvSourceList?.value ?? [], iptvSource.value] }
+  configs.data.value.iptvSourceList = { value: [...configs.data.value.iptvSourceList?.value ?? [], iptvSource.value] }
   await configs.update()
   router.back()
 }

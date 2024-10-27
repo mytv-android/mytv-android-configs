@@ -4,15 +4,15 @@ import { VueDraggable } from 'vue-draggable-plus'
 const configs = useConfigsStore()
 
 function remove(i: number) {
-  configs.data.iptvChannelFavoriteList?.value.splice(i, 1)
+  configs.data.value.iptvChannelFavoriteList?.value.splice(i, 1)
 }
 </script>
 
 <template>
-  <VanCellGroup v-if="configs.data.iptvChannelFavoriteList" inset>
-    <VueDraggable v-model="configs.data.iptvChannelFavoriteList!.value" :animation="150">
+  <VanCellGroup v-if="configs.data.value.iptvChannelFavoriteList" inset>
+    <VueDraggable v-model="configs.data.value.iptvChannelFavoriteList!.value" :animation="150">
       <VanCell
-        v-for="it, i in configs.data.iptvChannelFavoriteList?.value" :key="i" :title="it.channel.name"
+        v-for="it, i in configs.data.value.iptvChannelFavoriteList?.value" :key="i" :title="it.channel.name"
         :label="`${it.iptvSourceName} / ${it.groupName}`" center
       >
         <template #right-icon>

@@ -6,13 +6,13 @@ const configs = useConfigsStore()
   <VanCellGroup inset>
     <VanCell title="开机自启" center>
       <template #value>
-        <VanSwitch v-model="configs.data.appBootLaunch" />
+        <VanSwitch v-model="configs.data.value.appBootLaunch" />
       </template>
     </VanCell>
 
     <VanCell title="画中画" center>
       <template #value>
-        <VanSwitch v-model="configs.data.appPipEnable" />
+        <VanSwitch v-model="configs.data.value.appPipEnable" />
       </template>
     </VanCell>
 

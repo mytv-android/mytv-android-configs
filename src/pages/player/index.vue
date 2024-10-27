@@ -25,17 +25,17 @@ const videoPlayerLoadTimeoutPickerData = [
   <VanCellGroup inset>
     <VanCell title="内核" center is-link>
       <template #value>
-        <SimplePicker v-model:value="configs.data.videoPlayerCore" :columns="videoPlayerCorePickerData">
-          <VanField :model-value="VideoPlayerCoreLabels[configs.data.videoPlayerCore!]" input-align="right" readonly />
+        <SimplePicker v-model:value="configs.data.value.videoPlayerCore" :columns="videoPlayerCorePickerData">
+          <VanField :model-value="VideoPlayerCoreLabels[configs.data.value.videoPlayerCore!]" input-align="right" readonly />
         </SimplePicker>
       </template>
     </VanCell>
 
     <VanCell title="渲染方式" center is-link>
       <template #value>
-        <SimplePicker v-model:value="configs.data.videoPlayerRenderMode" :columns="videoPlayerRenderModePickerData">
+        <SimplePicker v-model:value="configs.data.value.videoPlayerRenderMode" :columns="videoPlayerRenderModePickerData">
           <VanField
-            :model-value="VideoPlayerRenderModeLabels[configs.data.videoPlayerRenderMode!]" input-align="right"
+            :model-value="VideoPlayerRenderModeLabels[configs.data.value.videoPlayerRenderMode!]" input-align="right"
             readonly
           />
         </SimplePicker>
@@ -44,9 +44,9 @@ const videoPlayerLoadTimeoutPickerData = [
 
     <VanCell title="全局显示模式" center is-link>
       <template #value>
-        <SimplePicker v-model:value="configs.data.videoPlayerDisplayMode" :columns="videoPlayerDisplayModePickerData">
+        <SimplePicker v-model:value="configs.data.value.videoPlayerDisplayMode" :columns="videoPlayerDisplayModePickerData">
           <VanField
-            :model-value="VideoPlayerDisplayModeLabels[configs.data.videoPlayerDisplayMode!]"
+            :model-value="VideoPlayerDisplayModeLabels[configs.data.value.videoPlayerDisplayMode!]"
             input-align="right" readonly
           />
         </SimplePicker>
@@ -55,9 +55,9 @@ const videoPlayerLoadTimeoutPickerData = [
 
     <VanCell title="加载超时" center is-link>
       <template #value>
-        <SimplePicker v-model:value="configs.data.videoPlayerLoadTimeout" :columns="videoPlayerLoadTimeoutPickerData">
+        <SimplePicker v-model:value="configs.data.value.videoPlayerLoadTimeout" :columns="videoPlayerLoadTimeoutPickerData">
           <VanField
-            :model-value="videoPlayerLoadTimeoutPickerData.find(it => it.value === configs.data.videoPlayerLoadTimeout)?.text ?? `${configs.data.videoPlayerLoadTimeout}ms`"
+            :model-value="videoPlayerLoadTimeoutPickerData.find(it => it.value === configs.data.value.videoPlayerLoadTimeout)?.text ?? `${configs.data.value.videoPlayerLoadTimeout}ms`"
             input-align="right" readonly
           />
         </SimplePicker>
@@ -66,7 +66,7 @@ const videoPlayerLoadTimeoutPickerData = [
 
     <VanCell title="自定义ua" center>
       <template #value>
-        <VanField v-model="configs.data.videoPlayerUserAgent" input-align="right" />
+        <VanField v-model="configs.data.value.videoPlayerUserAgent" input-align="right" />
       </template>
     </VanCell>
 
@@ -84,7 +84,7 @@ const videoPlayerLoadTimeoutPickerData = [
       </template>
 
       <template #value>
-        <VanField v-model="configs.data.videoPlayerHeaders" input-align="right" type="textarea" autosize />
+        <VanField v-model="configs.data.value.videoPlayerHeaders" input-align="right" type="textarea" autosize />
       </template>
     </VanCell>
 

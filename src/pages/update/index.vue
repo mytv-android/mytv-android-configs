@@ -12,9 +12,9 @@ const updateChannelPickerData = [
   <VanCellGroup inset>
     <VanCell title="更新通道" center is-link>
       <template #value>
-        <SimplePicker v-model:value="configs.data.updateChannel" :columns="updateChannelPickerData">
+        <SimplePicker v-model:value="configs.data.value.updateChannel" :columns="updateChannelPickerData">
           <VanField
-            :model-value="updateChannelPickerData.find(it => it.value === configs.data.updateChannel)?.text ?? `${configs.data.updateChannel}`"
+            :model-value="updateChannelPickerData.find(it => it.value === configs.data.value.updateChannel)?.text ?? `${configs.data.value.updateChannel}`"
             input-align="right" readonly
           />
         </SimplePicker>
@@ -23,7 +23,7 @@ const updateChannelPickerData = [
 
     <VanCell title="更新强提醒" center>
       <template #value>
-        <VanSwitch v-model="configs.data.updateForceRemind" />
+        <VanSwitch v-model="configs.data.value.updateForceRemind" />
       </template>
     </VanCell>
 

@@ -10,7 +10,7 @@ function addEpgSource() {
 <template>
   <VanCellGroup inset>
     <VanCell
-      v-for="source, i in configs.data.epgSourceList?.value" :key="i" :title="source.name" :label="source.url"
+      v-for="source, i in configs.data.value.epgSourceList?.value" :key="i" :title="source.name" :label="source.url"
       is-link center :to="`epg-source-detail/${i}`"
     />
 

@@ -21,6 +21,16 @@ import { VantResolver } from '@vant/auto-import-resolver'
 export default defineConfig({
   base: '/remote-configs',
 
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: () => 'everything', // 将所有模块打包成一个 chunk
+      },
+    },
+    cssCodeSplit: false, // 合并所有 CSS 文件
+    sourcemap: false, // 禁用 Source Map，减少文件数量
+  },
+
   server: {
     host: '0.0.0.0',
   },

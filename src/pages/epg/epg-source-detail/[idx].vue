@@ -6,7 +6,7 @@ const route = useRoute()
 const configs = useConfigsStore()
 const { idx } = route.params as { idx: number }
 
-const epgSource = computed<EpgSource | undefined>(() => configs.data.epgSourceList?.value[idx])
+const epgSource = computed<EpgSource | undefined>(() => configs.data.value.epgSourceList?.value[idx])
 
 async function saveEpgSource() {
   await configs.update()
@@ -14,13 +14,13 @@ async function saveEpgSource() {
 }
 
 async function deleteEpgSource() {
-  configs.data.epgSourceList?.value.splice(idx, 1)
+  configs.data.value.epgSourceList?.value.splice(idx, 1)
   await configs.update()
   router.back()
 }
 
 async function switchEpgSource() {
-  configs.data.epgSourceCurrent = epgSource.value
+  configs.data.value.epgSourceCurrent = epgSource.value
   await configs.update()
   router.back()
 }
