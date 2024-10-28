@@ -3,8 +3,18 @@ import { AppApi } from '~/apis/app'
 
 const configs = useConfigsStore()
 
-async function uploadApk(file: { file: File }) {
-  await AppApi.uploadApk(file.file)
+async function uploadApk() {
+  const { open, onChange } = useFileDialog({
+    accept: '.apk',
+    multiple: false,
+  })
+  open()
+  onChange(async (files) => {
+    if (!files || !files.length)
+      return
+
+    await AppApi.uploadApk(files![0])
+  })
 }
 </script>
 
@@ -43,13 +53,7 @@ async function uploadApk(file: { file: File }) {
     </VanCellGroup>
 
     <VanCellGroup inset>
-      <VanCell title="上传apk" center>
-        <VanUploader :after-read="uploadApk" accept=".apk">
-          <VanButton icon="plus" type="primary">
-            点击上传
-          </VanButton>
-        </VanUploader>
-      </VanCell>
+      <VanCell title="上传apk" value="" center is-link @click="uploadApk" />
     </VanCellGroup>
   </div>
 </template>

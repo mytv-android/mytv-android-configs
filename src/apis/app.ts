@@ -41,6 +41,14 @@ export const AppApi = {
   changeChannelAlias(alias: string) {
     return RequestUtil.post('/api/channel-alias', alias, undefined, false)
   },
+
+  getCloudSyncData() {
+    return RequestUtil.get<CloudSyncData>('/api/cloud-sync/data')
+  },
+
+  pushCloudSyncData(data: CloudSyncData) {
+    return RequestUtil.post('/api/cloud-sync/data', data)
+  },
 }
 
 export interface AppAbout {
@@ -235,4 +243,10 @@ export interface Channel {
 
 export interface ChannelFavoriteList {
   value: { channel: Channel, iptvSourceName: string, groupName: string }[]
+}
+
+export interface CloudSyncData {
+  version: string
+  syncAt: number
+  syncFrom: string
 }

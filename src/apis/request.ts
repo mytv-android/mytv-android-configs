@@ -19,7 +19,7 @@ export const RequestUtil = {
     try {
       const paramsStr = params ? `?${mapToQueryParams(params)}` : ''
       const response = await fetch(
-        `${path}${paramsStr}`,
+        `${import.meta.env.VITE_SERVER_BASE_URL}${path}${paramsStr}`,
         {
           method,
           headers: jsonBody ? { 'Content-Type': 'application/json' } : {},
