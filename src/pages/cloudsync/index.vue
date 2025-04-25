@@ -105,6 +105,34 @@ async function importData() {
         </VanCell>
       </template>
 
+      <template v-else-if="configs.data.value.cloudSyncProvider === CloudSyncProvider.LOCAL_FILE">
+        <VanCell title="本地文件路径" center>
+          <template #value>
+            <VanField v-model="configs.data.value.cloudSyncLocalFilePath" input-align="right" />
+          </template>
+        </VanCell>
+      </template>
+
+      <template v-else-if="configs.data.value.cloudSyncProvider === CloudSyncProvider.WEBDAV">
+        <VanCell title="WebDAV 地址" center>
+          <template #value>
+            <VanField v-model="configs.data.value.cloudSyncWebDavUrl" input-align="right" />
+          </template>
+        </VanCell>
+
+        <VanCell title="WebDAV 用户名" center>
+          <template #value>
+            <VanField v-model="configs.data.value.cloudSyncWebDavUsername" input-align="right" />
+          </template>
+        </VanCell>
+
+        <VanCell title="WebDAV 密码" center>
+          <template #value>
+            <VanField v-model="configs.data.value.cloudSyncWebDavPassword" input-align="right" />
+          </template>
+        </VanCell>
+      </template>
+
       <VanCell>
         <VanButton type="primary" block @click="configs.update">
           更新

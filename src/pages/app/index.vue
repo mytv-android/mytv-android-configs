@@ -10,6 +10,15 @@ const configs = useConfigsStore()
       </template>
     </VanCell>
 
+    <VanCell title="打开直接进入直播" center>
+      <template #value>
+        <VanSwitch
+          :model-value="configs.data.value.appStartupScreen === 'Live'"
+          @update:model-value="configs.data.value.appStartupScreen = $event ? 'Live' : 'Dashboard'"
+        />
+      </template>
+    </VanCell>
+
     <VanCell title="画中画" center>
       <template #value>
         <VanSwitch v-model="configs.data.value.appPipEnable" />

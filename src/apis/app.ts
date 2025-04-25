@@ -74,6 +74,7 @@ export interface AppConfigs {
   appPipEnable?: boolean
   appLastLatestVersion?: string
   appAgreementAgreed?: boolean
+  appStartupScreen?: string
   debugDeveloperMode?: boolean
   debugShowFps?: boolean
   debugShowVideoPlayerMetadata?: boolean
@@ -127,6 +128,10 @@ export interface AppConfigs {
   cloudSyncGiteeGistId?: string
   cloudSyncGiteeGistToken?: string
   cloudSyncNetworkUrl?: string
+  cloudSyncLocalFilePath?: string
+  cloudSyncWebDavUrl?: string
+  cloudSyncWebDavUsername?: string
+  cloudSyncWebDavPassword?: string
 }
 
 export enum IptvHybridMode {
@@ -217,12 +222,16 @@ export enum CloudSyncProvider {
   GITHUB_GIST = 'GITHUB_GIST',
   GITEE_GIST = 'GITEE_GIST',
   NETWORK_URL = 'NETWORK_URL',
+  LOCAL_FILE = 'LOCAL_FILE',
+  WEBDAV = 'WEBDAV',
 }
 
 export const CloudSyncProviderLabels: { [key in CloudSyncProvider]: string } = {
   [CloudSyncProvider.GITHUB_GIST]: 'GitHub Gist',
   [CloudSyncProvider.GITEE_GIST]: 'Gitee 代码片段',
   [CloudSyncProvider.NETWORK_URL]: '网络链接',
+  [CloudSyncProvider.LOCAL_FILE]: '本地文件',
+  [CloudSyncProvider.WEBDAV]: 'WebDAV',
 }
 
 export interface AppThemeDef {
