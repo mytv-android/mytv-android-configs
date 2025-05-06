@@ -15,7 +15,7 @@ const iptvHybridModePickerData = Object.entries(IptvHybridModeLabels).map(it => 
 
 <template>
   <VanCellGroup inset>
-    <VanCell title="自定义直播源" is-link center to="iptv/iptv-source-list">
+    <VanCell title="自定义播放源" is-link center to="iptv/iptv-source-list">
       <template #value>
         <div class="flex items-center justify-end gap-2">
           <VanTag v-if="configs.data.value.iptvSourceCurrent?.isLocal" plain type="warning" class="flex-none">
@@ -30,7 +30,7 @@ const iptvHybridModePickerData = Object.entries(IptvHybridModeLabels).map(it => 
       </template>
     </VanCell>
 
-    <VanCell title="直播源缓存时间" center is-link>
+    <VanCell title="播放源缓存时间" center is-link>
       <template #value>
         <SimplePicker v-model:value="configs.data.value.iptvSourceCacheTime" :columns="iptvSourceCacheTimePickerData">
           <VanField
@@ -70,7 +70,18 @@ const iptvHybridModePickerData = Object.entries(IptvHybridModeLabels).map(it => 
       </template>
     </VanCell>
 
-    <VanCell title="混合模式" center is-link>
+    <VanCell center>
+      <template #title>
+        <CellTitle title="网页源央视频Cookie">
+        </CellTitle>
+      </template>
+
+      <template #value>
+        <VanField v-model="configs.data.value.iptvHybridYangshipinCookie" input-align="right" />
+      </template>
+    </VanCell>
+
+    <VanCell title="网页源" center is-link>
       <template #value>
         <SimplePicker v-model:value="configs.data.value.iptvHybridMode" :columns="iptvHybridModePickerData">
           <VanField :model-value="IptvHybridModeLabels[configs.data.value.iptvHybridMode!]" input-align="right" readonly />
@@ -100,5 +111,5 @@ const iptvHybridModePickerData = Object.entries(IptvHybridModeLabels).map(it => 
 <route lang="yaml">
 meta:
   layout: default
-  title: 直播源
+  title: 播放源
 </route>

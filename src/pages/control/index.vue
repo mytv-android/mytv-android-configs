@@ -22,6 +22,18 @@ const configs = useConfigsStore()
       </template>
     </VanCell>
 
+    <VanCell title="频道切换跨分组" center>
+      <template #value>
+        <VanSwitch v-model="configs.data.value.iptvChannelChangeCrossGroup" />
+      </template>
+    </VanCell>
+    
+    <VanCell title="左右键切换播放源" center>
+      <template #value>
+        <VanSwitch v-model="configs.data.value.iptvChannelChangeLineWithLeftRight" />
+      </template>
+    </VanCell>
+
     <VanCell>
       <VanButton type="primary" block @click="configs.update">
         更新

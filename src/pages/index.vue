@@ -9,7 +9,7 @@
 
     <VanCellGroup inset>
       <VanCell title="应用" is-link to="app" />
-      <VanCell title="直播源" is-link to="iptv" />
+      <VanCell title="播放源" is-link to="iptv" />
       <VanCell title="节目单" is-link to="epg" />
       <VanCell title="界面" is-link to="ui" />
       <VanCell title="控制" is-link to="control" />

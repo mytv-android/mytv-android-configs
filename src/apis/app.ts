@@ -86,6 +86,7 @@ export interface AppConfigs {
   iptvHybridMode?: IptvHybridMode
   iptvSimilarChannelMerge?: boolean
   iptvChannelLogoProvider?: string
+  iptvHybridYangshipinCookie?: string
   iptvChannelLogoOverride?: boolean
   iptvChannelFavoriteEnable?: boolean
   iptvChannelFavoriteListVisible?: boolean
@@ -96,6 +97,8 @@ export interface AppConfigs {
   iptvChannelChangeFlip?: boolean
   iptvChannelNoSelectEnable?: boolean
   iptvChannelChangeListLoop?: boolean
+  iptvChannelChangeCrossGroup?: boolean
+  iptvChannelChangeLineWithLeftRight?: boolean
   epgEnable?: boolean
   epgSourceCurrent?: EpgSource
   epgSourceList?: EpgSourceList
@@ -119,6 +122,7 @@ export interface AppConfigs {
   videoPlayerUserAgent?: string
   videoPlayerHeaders?: string
   videoPlayerLoadTimeout?: number
+  videoPlayerBufferTime?: number
   videoPlayerDisplayMode?: VideoPlayerDisplayMode
   themeAppCurrent?: AppThemeDef
   cloudSyncAutoPull?: boolean

@@ -96,5 +96,5 @@ async function addIptvSource() {
 <route lang="yaml">
 meta:
   layout: default
-  title: 添加直播源
+  title: 添加播放源
 </route>

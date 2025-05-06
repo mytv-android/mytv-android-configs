@@ -14,7 +14,7 @@ const epgRefreshTimeThresholdPickerData = [
       </template>
     </VanCell>
 
-    <VanCell title="跟随直播源" center>
+    <VanCell title="跟随播放源" center>
       <template #value>
         <VanSwitch v-model="configs.data.value.epgSourceFollowIptv" />
       </template>
