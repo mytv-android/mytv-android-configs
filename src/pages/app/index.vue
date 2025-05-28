@@ -36,5 +36,5 @@ const configs = useConfigsStore()
 <route lang="yaml">
 meta:
   layout: default
-  title: 应用
+  title: 通用
 </route>

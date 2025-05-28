@@ -88,7 +88,7 @@ const videoPlayerBufferTimePickerData = [
       </template>
     </VanCell>
 
-    <VanCell title="缓存加载时间 center is-link>
+    <VanCell title="缓存加载时间" center is-link>
       <template #value>
         <SimplePicker v-model:value="configs.data.value.videoPlayerBufferTime" :columns="videoPlayerBufferTimePickerData">
           <VanField
@@ -99,7 +99,7 @@ const videoPlayerBufferTimePickerData = [
       </template>
     </VanCell>
 
-    <VanCell title="自定义ua" center>
+    <VanCell title="全局ua" center>
       <template #value>
         <VanField v-model="configs.data.value.videoPlayerUserAgent" input-align="right" />
       </template>

@@ -73,6 +73,12 @@ async function addIptvSource() {
       </template>
     </VanCell>
 
+    <VanCell v-else-if="iptvSource.type === 'url'" title="UA">
+      <template #value>
+        <VanField v-model="iptvSource.httpUserAgent" type="textarea" rows="5" />
+      </template>
+    </VanCell>
+
     <VanCell title="转换JS" center>
       <template #value>
         <VanField v-model="iptvSource.transformJs" type="textarea" rows="5" />
@@ -96,5 +102,5 @@ async function addIptvSource() {
 <route lang="yaml">
 meta:
   layout: default
-  title: 添加播放源
+  title: 添加订阅源
 </route>

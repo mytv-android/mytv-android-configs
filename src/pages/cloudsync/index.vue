@@ -141,9 +141,8 @@ async function importData() {
     </VanCellGroup>
 
     <VanCellGroup inset>
-      <VanCell title="导出应用数据" value="" center is-link @click="exportData" />
-
       <VanCell title="导入应用数据" value="" center is-link @click="importData" />
+      <VanCell title="导出应用数据" value="" center is-link @click="exportData" />
     </VanCellGroup>
   </div>
 </template>

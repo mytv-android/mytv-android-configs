@@ -4,12 +4,12 @@
 <template>
   <div>
     <div class="ml-16px p-20px pt-0 text-32px">
-      天光云影
+      电视直播
     </div>
 
     <VanCellGroup inset>
-      <VanCell title="应用" is-link to="app" />
-      <VanCell title="播放源" is-link to="iptv" />
+      <VanCell title="通用" is-link to="app" />
+      <VanCell title="订阅源" is-link to="iptv" />
       <VanCell title="节目单" is-link to="epg" />
       <VanCell title="界面" is-link to="ui" />
       <VanCell title="控制" is-link to="control" />

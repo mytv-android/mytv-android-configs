@@ -48,5 +48,5 @@ function addIptvSource() {
 <route lang="yaml">
 meta:
   layout: default
-  title: 自定义播放源
+  title: 自定义订阅源
 </route>

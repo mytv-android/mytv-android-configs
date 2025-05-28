@@ -101,5 +101,5 @@ async function switchIptvSource() {
 <route lang="yaml">
 meta:
   layout: default
-  title: 播放源详情
+  title: 订阅源详情
 </route>
