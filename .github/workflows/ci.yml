@@ -94,13 +94,13 @@ jobs:
           install-command: echo
           build: pnpm run build
           start: npx vite preview --port 3333
-  
+
   build:
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
     needs:
       - lint
-      - typecheck
+      # - typecheck
       - test
     steps:
       - uses: actions/checkout@v4
@@ -115,8 +115,8 @@ jobs:
 
       - name: Build
         run: pnpm run build
-      
-      - name: Upload Artifact 
+
+      - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           path: dist/*

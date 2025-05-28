@@ -27,7 +27,7 @@ const configs = useConfigsStore()
         <VanSwitch v-model="configs.data.value.iptvChannelChangeCrossGroup" />
       </template>
     </VanCell>
-    
+
     <VanCell>
       <VanButton type="primary" block @click="configs.update">
         更新

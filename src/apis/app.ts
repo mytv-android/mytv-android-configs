@@ -155,6 +155,7 @@ export interface IptvSource {
   url: string
   isLocal: boolean
   transformJs?: string
+  httpUserAgent?: string
 }
 
 export interface IptvSourceList {
@@ -168,6 +169,17 @@ export interface EpgSource {
 
 export interface EpgSourceList {
   value: EpgSource[]
+}
+
+export interface EpgProgrammeReserve {
+  channel: String
+  programme: String
+  startAt: number
+  endAt: number
+}
+
+export interface EpgProgrammeReserveList {
+  value: EpgProgrammeReserve[]
 }
 
 export enum UiTimeShowMode {

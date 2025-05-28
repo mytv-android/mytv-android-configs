@@ -61,6 +61,12 @@ async function addIptvSource() {
       </template>
     </VanCell>
 
+    <VanCell v-if="iptvSource.type === 'url'" title="UA">
+      <template #value>
+        <VanField v-model="iptvSource.httpUserAgent" type="textarea" rows="5" />
+      </template>
+    </VanCell>
+
     <VanCell v-else-if="iptvSource.type === 'file'" title="文件路径" center>
       <template #value>
         <VanField v-model="iptvSource.url" input-align="right" />
@@ -70,12 +76,6 @@ async function addIptvSource() {
     <VanCell v-else-if="iptvSource.type === 'content'" title="内容">
       <template #value>
         <VanField v-model="iptvSource.content" type="textarea" rows="5" />
-      </template>
-    </VanCell>
-
-    <VanCell v-else-if="iptvSource.type === 'url'" title="UA">
-      <template #value>
-        <VanField v-model="iptvSource.httpUserAgent" type="textarea" rows="5" />
       </template>
     </VanCell>
 
