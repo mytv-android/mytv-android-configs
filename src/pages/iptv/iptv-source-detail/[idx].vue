@@ -68,6 +68,12 @@ async function switchIptvSource() {
       </template>
     </VanCell>
 
+    <VanCell v-if="iptvSource.type === 'url'" title="UA">
+      <template #value>
+        <VanField v-model="iptvSource.httpUserAgent" type="textarea" rows="5" />
+      </template>
+    </VanCell>
+
     <VanCell title="转换JS" center>
       <template #value>
         <VanField v-model="iptvSource.transformJs" type="textarea" rows="5" />
