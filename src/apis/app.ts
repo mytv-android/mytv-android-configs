@@ -172,8 +172,8 @@ export interface EpgSourceList {
 }
 
 export interface EpgProgrammeReserve {
-  channel: String
-  programme: String
+  channel: string
+  programme: string
   startAt: number
   endAt: number
 }
