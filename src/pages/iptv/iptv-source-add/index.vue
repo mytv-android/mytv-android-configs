@@ -6,23 +6,25 @@ const router = useRouter()
 const configs = useConfigsStore()
 
 const iptvSource = ref<IptvSource & {
-  type: 'url' | 'file' | 'content'
+  type: 'url' | 'file' | 'content' | 'xtream'
   content?: string
 }>({
   type: 'url',
   name: '',
   url: '',
-  isLocal: false,
+  sourceType: 0,
 })
 
 async function addIptvSource() {
   if (iptvSource.value.type === 'file') {
-    iptvSource.value.isLocal = true
+    iptvSource.value.sourceType = 1
   }
   else if (iptvSource.value.type === 'content') {
-    iptvSource.value.isLocal = true
+    iptvSource.value.sourceType = 1
     const path = await AppApi.writeFileContentWithDir('file', `iptv_source_local_${Date.now()}.txt`, iptvSource.value.content!)
     iptvSource.value.url = path
+  }else if (iptvSource.value.type === 'xtream'){
+    iptvSource.value.sourceType = 2
   }
 
   configs.data.value.iptvSourceList = { value: [...configs.data.value.iptvSourceList?.value ?? [], iptvSource.value] }
@@ -45,6 +47,9 @@ async function addIptvSource() {
           <VanRadio name="content">
             静态
           </VanRadio>
+          <VanRadio name="xtream">
+            XTREAM
+          </VanRadio>
         </VanRadioGroup>
       </template>
     </VanCell>
@@ -55,13 +60,13 @@ async function addIptvSource() {
       </template>
     </VanCell>
 
-    <VanCell v-if="iptvSource.type === 'url'" title="链接" center>
+    <VanCell v-if="iptvSource.type === 'url' || iptvSource.type === 'xtream'" title="链接" center>
       <template #value>
         <VanField v-model="iptvSource.url" input-align="right" />
       </template>
     </VanCell>
 
-    <VanCell v-if="iptvSource.type === 'url'" title="UA">
+    <VanCell v-if="iptvSource.type === 'url' || iptvSource.type === 'xtream'" title="UA">
       <template #value>
         <VanField v-model="iptvSource.httpUserAgent" type="textarea" rows="5" />
       </template>
@@ -76,6 +81,24 @@ async function addIptvSource() {
     <VanCell v-else-if="iptvSource.type === 'content'" title="内容">
       <template #value>
         <VanField v-model="iptvSource.content" type="textarea" rows="5" />
+      </template>
+    </VanCell>
+
+    <VanCell v-if="iptvSource.type === 'xtream'" title="用户名">
+      <template #value>
+        <VanField v-model="iptvSource.userName" type="textarea" rows="5" />
+      </template>
+    </VanCell>
+
+    <VanCell v-if="iptvSource.type === 'xtream'" title="密码">
+      <template #value>
+        <VanField v-model="iptvSource.password" type="textarea" rows="5" />
+      </template>
+    </VanCell>
+
+    <VanCell v-if="iptvSource.type === 'xtream'" title="输出类型">
+      <template #value>
+        <VanField v-model="iptvSource.format" type="textarea" rows="5" />
       </template>
     </VanCell>
 

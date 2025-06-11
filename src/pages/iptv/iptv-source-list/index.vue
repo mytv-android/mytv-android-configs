@@ -17,13 +17,15 @@ function addIptvSource() {
         <div class="flex items-center gap-2">
           <span class="text-sm">{{ source.name }}</span>
 
-          <VanTag v-if="source.isLocal" plain type="warning">
+          <VanTag v-if="source.type === 1" plain type="warning">
             本地
+          </VanTag>
+          <VanTag v-else-if"source.type == 2" plain type="danger">
+            XTREAM
           </VanTag>
           <VanTag v-else plain type="primary">
             远程
           </VanTag>
-
           <VanTag v-if="source.transformJs" plain type="success">
             转换JS
           </VanTag>

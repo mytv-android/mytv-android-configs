@@ -146,13 +146,16 @@ export enum IptvHybridMode {
 export const IptvHybridModeLabels: { [key in IptvHybridMode]: string } = {
   [IptvHybridMode.DISABLE]: '禁用',
   [IptvHybridMode.IPTV_FIRST]: 'IPTV优先',
-  [IptvHybridMode.HYBRID_FIRST]: '混合优先',
+  [IptvHybridMode.HYBRID_FIRST]: '网页源优先',
 }
 
 export interface IptvSource {
   name: string
   url: string
-  isLocal: boolean
+  type: number
+  userName?: string
+  password?: string
+  format?: string
   transformJs?: string
   httpUserAgent?: string
 }

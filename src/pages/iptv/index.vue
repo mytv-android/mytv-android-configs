@@ -18,13 +18,15 @@ const iptvHybridModePickerData = Object.entries(IptvHybridModeLabels).map(it => 
     <VanCell title="自定义订阅源" is-link center to="iptv/iptv-source-list">
       <template #value>
         <div class="flex items-center justify-end gap-2">
-          <VanTag v-if="configs.data.value.iptvSourceCurrent?.isLocal" plain type="warning" class="flex-none">
+          <VanTag v-if="configs.data.value.iptvSourceCurrent?.sourceType === 1" plain type="warning" class="flex-none">
             本地
+          </VanTag>
+          <VanTag v-else-if"source.sourceType == 2" plain type="danger" class="flex-none">
+            XTREAM
           </VanTag>
           <VanTag v-else plain type="primary" class="flex-none">
             远程
           </VanTag>
-
           {{ configs.data.value.iptvSourceCurrent?.name }}
         </div>
       </template>

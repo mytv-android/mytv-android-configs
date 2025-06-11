@@ -12,14 +12,14 @@ const iptvSource = computed<IptvSource & { content?: string } | undefined>(() =>
 watch(iptvSource, async (val) => {
   if (!val)
     return
-  if (!val.isLocal)
+  if (!val.sourceType === 1)
     return
 
   val.content = await AppApi.getFileContent(val.url!)
 }, { immediate: true })
 
 async function saveIptvSource() {
-  if (iptvSource.value?.isLocal) {
+  if (iptvSource.value?.sourceType === 1) {
     await AppApi.writeFileContent(iptvSource.value.url!, iptvSource.value.content!)
   }
 
@@ -48,7 +48,7 @@ async function switchIptvSource() {
       </template>
     </VanCell>
 
-    <template v-if="iptvSource.isLocal">
+    <template v-if="iptvSource.sourceType === 1">
       <VanCell title="文件路径" center>
         <template #value>
           <VanField v-model="iptvSource.url" input-align="right" />
@@ -68,7 +68,25 @@ async function switchIptvSource() {
       </template>
     </VanCell>
 
-    <VanCell v-if="!(iptvSource.isLocal)" title="UA">
+    <VanCell v-if="iptvSource.sourceType === 2" title="用户名">
+      <template #value>
+        <VanField v-model="iptvSource.userName" type="textarea" rows="5" />
+      </template>
+    </VanCell>
+
+    <VanCell v-if="iptvSource.sourceType === 2" title="密码">
+      <template #value>
+        <VanField v-model="iptvSource.password" type="textarea" rows="5" />
+      </template>
+    </VanCell>
+
+    <VanCell v-if="iptvSource.sourceType === 2" title="输出类型">
+      <template #value>
+        <VanField v-model="iptvSource.format" type="textarea" rows="5" />
+      </template>
+    </VanCell>
+
+    <VanCell v-if="!(iptvSource.sourceType === 1)" title="UA">
       <template #value>
         <VanField v-model="iptvSource.httpUserAgent" type="textarea" rows="5" />
       </template>
