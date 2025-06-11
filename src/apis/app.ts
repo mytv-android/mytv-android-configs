@@ -94,7 +94,6 @@ export interface AppConfigs {
   iptvChannelLastPlay?: Channel
   iptvChannelLinePlayableHostList?: Set<string>
   iptvChannelLinePlayableUrlList?: Set<string>
-  iptvChannelChangeFlip?: boolean
   iptvChannelNoSelectEnable?: boolean
   iptvChannelChangeListLoop?: boolean
   iptvChannelChangeCrossGroup?: boolean

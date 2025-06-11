@@ -10,12 +10,6 @@ const configs = useConfigsStore()
       </template>
     </VanCell>
 
-    <VanCell title="换台反转" center>
-      <template #value>
-        <VanSwitch v-model="configs.data.value.iptvChannelChangeFlip" />
-      </template>
-    </VanCell>
-
     <VanCell title="换台列表首尾循环" center>
       <template #value>
         <VanSwitch v-model="configs.data.value.iptvChannelChangeListLoop" />
