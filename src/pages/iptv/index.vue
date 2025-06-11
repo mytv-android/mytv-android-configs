@@ -21,7 +21,7 @@ const iptvHybridModePickerData = Object.entries(IptvHybridModeLabels).map(it => 
           <VanTag v-if="configs.data.value.iptvSourceCurrent?.sourceType === 1" plain type="warning" class="flex-none">
             本地
           </VanTag>
-          <VanTag v-else-if"source.sourceType == 2" plain type="danger" class="flex-none">
+          <VanTag v-else-if="configs.data.value.iptvSourceCurrent?.sourceType === 2" plain type="danger" class="flex-none">
             XTREAM
           </VanTag>
           <VanTag v-else plain type="primary" class="flex-none">

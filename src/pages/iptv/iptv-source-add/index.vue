@@ -23,7 +23,8 @@ async function addIptvSource() {
     iptvSource.value.sourceType = 1
     const path = await AppApi.writeFileContentWithDir('file', `iptv_source_local_${Date.now()}.txt`, iptvSource.value.content!)
     iptvSource.value.url = path
-  }else if (iptvSource.value.type === 'xtream'){
+  }
+  else if (iptvSource.value.type === 'xtream'){
     iptvSource.value.sourceType = 2
   }
 

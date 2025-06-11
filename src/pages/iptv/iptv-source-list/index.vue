@@ -20,7 +20,7 @@ function addIptvSource() {
           <VanTag v-if="source.type === 1" plain type="warning">
             本地
           </VanTag>
-          <VanTag v-else-if"source.type == 2" plain type="danger">
+          <VanTag v-else-if="source.type === 2" plain type="danger">
             XTREAM
           </VanTag>
           <VanTag v-else plain type="primary">
