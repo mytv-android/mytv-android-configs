@@ -152,7 +152,7 @@ export const IptvHybridModeLabels: { [key in IptvHybridMode]: string } = {
 export interface IptvSource {
   name: string
   url: string
-  type: number
+  sourceType: number
   userName?: string
   password?: string
   format?: string
