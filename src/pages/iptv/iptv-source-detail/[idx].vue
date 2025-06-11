@@ -12,7 +12,7 @@ const iptvSource = computed<IptvSource & { content?: string } | undefined>(() =>
 watch(iptvSource, async (val) => {
   if (!val)
     return
-  if (!val.sourceType === 1)
+  if (val.sourceType !== 1)
     return
 
   val.content = await AppApi.getFileContent(val.url!)
