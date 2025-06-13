@@ -13,6 +13,7 @@ const iptvSource = ref<IptvSource & {
   name: '',
   url: '',
   sourceType: 0,
+  format: 'm3u_plus',
 })
 
 async function addIptvSource() {
