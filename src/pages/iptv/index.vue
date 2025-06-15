@@ -5,8 +5,8 @@ const configs = useConfigsStore()
 
 const iptvSourceCacheTimePickerData = [
   { text: 'No Cache', value: 0 },
-  ...Array.from({ length: 23 }, (_, i) => i + 1).map(it => ({ text: `${it} hour${it > 1 ? 's' : ''}`, value: it * 1000 * 60 * 60 })),
-  ...Array.from({ length: 15 }, (_, i) => i + 1).map(it => ({ text: `${it} day${it > 1 ? 's' : ''}`, value: it * 24 * 1000 * 60 * 60 })),
+  ...Array.from({ length: 23 }, (_, i) => i + 1).map(it => ({ text: `${it} hour`, value: it * 1000 * 60 * 60 })),
+  ...Array.from({ length: 15 }, (_, i) => i + 1).map(it => ({ text: `${it} day`, value: it * 24 * 1000 * 60 * 60 })),
   { text: 'Permanent', value: 9223372036854776000 },
 ]
 

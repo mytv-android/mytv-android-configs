@@ -19,7 +19,7 @@ import { VueRouterAutoImports } from 'unplugin-vue-router'
 import { VantResolver } from '@vant/auto-import-resolver'
 
 export default defineConfig({
-  base: '/remote-configs',
+  base: '/remote-configs-en',
 
   build: {
     rollupOptions: {
