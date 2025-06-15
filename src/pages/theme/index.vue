@@ -10,7 +10,7 @@ watch(configs, () => {
 
 <template>
   <VanCellGroup v-if="configs.data.value.themeAppCurrent" inset>
-    <VanCell title="主题名称" center>
+    <VanCell title="Theme Name" center>
       <template #value>
         <VanField v-model="configs.data.value.themeAppCurrent.name" input-align="right" />
       </template>
@@ -18,13 +18,13 @@ watch(configs, () => {
 
     <VanCell center>
       <template #title>
-        <CellTitle title="背景">
+        <CellTitle title="Background">
           <template #help>
             <div class="w-410px flex flex-col gap-1">
-              <div>示例：</div>
-              <div>base64：iVBORw0KGgoAAAANSUhEUg...</div>
-              <div>网络链接：http://image.dev/bg.png</div>
-              <div>本地文件：file:///storage/emulated/0/Download/bg.png</div>
+              <div>Example:</div>
+              <div>base64: iVBORw0KGgoAAAANSUhEUg...</div>
+              <div>Network URL: http://image.dev/bg.png</div>
+              <div>Local file: file:///storage/emulated/0/Download/bg.png</div>
             </div>
           </template>
         </CellTitle>
@@ -37,13 +37,13 @@ watch(configs, () => {
 
     <VanCell center>
       <template #title>
-        <CellTitle title="贴图">
+        <CellTitle title="Texture">
           <template #help>
             <div class="w-410px flex flex-col gap-1">
-              <div>示例：</div>
-              <div>base64：iVBORw0KGgoAAAANSUhEUg...</div>
-              <div>网络链接：http://image.dev/bg.png</div>
-              <div>本地文件：file:///storage/emulated/0/Download/bg.png</div>
+              <div>Example:</div>
+              <div>base64: iVBORw0KGgoAAAANSUhEUg...</div>
+              <div>Network URL: http://image.dev/bg.png</div>
+              <div>Local file: file:///storage/emulated/0/Download/bg.png</div>
             </div>
           </template>
         </CellTitle>
@@ -54,7 +54,7 @@ watch(configs, () => {
       </template>
     </VanCell>
 
-    <VanCell title="贴图透明度" center>
+    <VanCell title="Texture Alpha" center>
       <template #value>
         <VanField v-model="configs.data.value.themeAppCurrent.textureAlpha" type="number" input-align="right" />
       </template>
@@ -62,7 +62,7 @@ watch(configs, () => {
 
     <VanCell>
       <VanButton type="primary" block @click="configs.update">
-        更新
+        Update
       </VanButton>
     </VanCell>
   </VanCellGroup>
@@ -77,5 +77,5 @@ watch(configs, () => {
 <route lang="yaml">
 meta:
   layout: default
-  title: 主题
+  title: Theme
 </route>

@@ -21,25 +21,25 @@ async function uploadApk() {
 <template>
   <div class="flex flex-col gap-4">
     <VanCellGroup inset>
-      <VanCell title="开发者模式" center>
+      <VanCell title="Developer Mode" center>
         <template #value>
           <VanSwitch v-model="configs.data.value.debugDeveloperMode" />
         </template>
       </VanCell>
 
-      <VanCell title="FPS显示" center>
+      <VanCell title="Show FPS" center>
         <template #value>
           <VanSwitch v-model="configs.data.value.debugShowFps" />
         </template>
       </VanCell>
 
-      <VanCell title="显示播放器信息" center>
+      <VanCell title="Show Player Info" center>
         <template #value>
           <VanSwitch v-model="configs.data.value.debugShowVideoPlayerMetadata" />
         </template>
       </VanCell>
 
-      <VanCell title="显示布局网格" center>
+      <VanCell title="Show Layout Grids" center>
         <template #value>
           <VanSwitch v-model="configs.data.value.debugShowLayoutGrids" />
         </template>
@@ -47,13 +47,13 @@ async function uploadApk() {
 
       <VanCell>
         <VanButton type="primary" block @click="configs.update">
-          更新
+          Update
         </VanButton>
       </VanCell>
     </VanCellGroup>
 
     <VanCellGroup inset>
-      <VanCell title="上传apk" value="" center is-link @click="uploadApk" />
+      <VanCell title="Upload APK" value="" center is-link @click="uploadApk" />
     </VanCellGroup>
   </div>
 </template>
@@ -61,5 +61,5 @@ async function uploadApk() {
 <route lang="yaml">
 meta:
   layout: default
-  title: 调试
+  title: Debug
 </route>

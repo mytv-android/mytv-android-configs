@@ -14,7 +14,7 @@ function mapToQueryParams(map: object): string {
 
 export const RequestUtil = {
   async request<T>(method: string, path: string, params?: object, data?: any, jsonBody?: boolean, configs?: RequestInit): Promise<Awaited<T>> {
-    showLoadingToast({ message: '加载中...', forbidClick: true, duration: 0 })
+    showLoadingToast({ message: 'Loading...', forbidClick: true, duration: 0 })
 
     try {
       const paramsStr = params ? `?${mapToQueryParams(params)}` : ''
@@ -39,7 +39,7 @@ export const RequestUtil = {
       return response.text() as Awaited<T>
     }
     catch (e) {
-      showToast('请求失败')
+      showToast('Request failed')
       throw e
     }
   },

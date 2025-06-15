@@ -18,13 +18,13 @@ async function addEpgSource() {
 
 <template>
   <VanCellGroup v-if="epgSource" inset>
-    <VanCell title="名称" center>
+    <VanCell title="Name" center>
       <template #value>
         <VanField v-model="epgSource.name" input-align="right" />
       </template>
     </VanCell>
 
-    <VanCell title="链接" center>
+    <VanCell title="URL" center>
       <template #value>
         <VanField v-model="epgSource.url" input-align="right" />
       </template>
@@ -32,7 +32,7 @@ async function addEpgSource() {
 
     <VanCell>
       <VanButton type="primary" block @click="addEpgSource">
-        确认
+        Confirm
       </VanButton>
     </VanCell>
   </VanCellGroup>
@@ -47,5 +47,5 @@ async function addEpgSource() {
 <route lang="yaml">
 meta:
   layout: default
-  title: 添加节目单
+  title: Add EPG Source
 </route>

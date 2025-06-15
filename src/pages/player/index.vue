@@ -10,44 +10,44 @@ const videoPlayerRenderModePickerData = Object.entries(VideoPlayerRenderModeLabe
 const videoPlayerDisplayModePickerData = Object.entries(VideoPlayerDisplayModeLabels).map(it => ({ text: it[1], value: it[0] }))
 
 const videoPlayerLoadTimeoutPickerData = [
-  { text: '1秒', value: 1 * 1000 },
-  { text: '2秒', value: 2 * 1000 },
-  { text: '3秒', value: 3 * 1000 },
-  { text: '4秒', value: 4 * 1000 },
-  { text: '5秒', value: 5 * 1000 },
-  { text: '10秒', value: 10 * 1000 },
-  { text: '15秒', value: 15 * 1000 },
-  { text: '20秒', value: 20 * 1000 },
-  { text: '25秒', value: 25 * 1000 },
-  { text: '30秒', value: 30 * 1000 },
-  { text: '45秒', value: 45 * 1000 },
-  { text: '1分钟', value: 60 * 1000 },
+  { text: '1s', value: 1 * 1000 },
+  { text: '2s', value: 2 * 1000 },
+  { text: '3s', value: 3 * 1000 },
+  { text: '4s', value: 4 * 1000 },
+  { text: '5s', value: 5 * 1000 },
+  { text: '10s', value: 10 * 1000 },
+  { text: '15s', value: 15 * 1000 },
+  { text: '20s', value: 20 * 1000 },
+  { text: '25s', value: 25 * 1000 },
+  { text: '30s', value: 30 * 1000 },
+  { text: '45s', value: 45 * 1000 },
+  { text: '1min', value: 60 * 1000 },
 ]
 
 const videoPlayerBufferTimePickerData = [
-  { text: '0秒', value: 0 * 1000 },
-  { text: '1秒', value: 1 * 1000 },
-  { text: '2秒', value: 2 * 1000 },
-  { text: '3秒', value: 3 * 1000 },
-  { text: '4秒', value: 4 * 1000 },
-  { text: '5秒', value: 5 * 1000 },
-  { text: '6秒', value: 6 * 1000 },
-  { text: '7秒', value: 7 * 1000 },
-  { text: '8秒', value: 8 * 1000 },
-  { text: '9秒', value: 9 * 1000 },
-  { text: '10秒', value: 10 * 1000 },
-  { text: '15秒', value: 15 * 1000 },
-  { text: '20秒', value: 20 * 1000 },
-  { text: '25秒', value: 25 * 1000 },
-  { text: '30秒', value: 30 * 1000 },
-  { text: '45秒', value: 45 * 1000 },
-  { text: '1分钟', value: 60 * 1000 },
+  { text: '0s', value: 0 * 1000 },
+  { text: '1s', value: 1 * 1000 },
+  { text: '2s', value: 2 * 1000 },
+  { text: '3s', value: 3 * 1000 },
+  { text: '4s', value: 4 * 1000 },
+  { text: '5s', value: 5 * 1000 },
+  { text: '6s', value: 6 * 1000 },
+  { text: '7s', value: 7 * 1000 },
+  { text: '8s', value: 8 * 1000 },
+  { text: '9s', value: 9 * 1000 },
+  { text: '10s', value: 10 * 1000 },
+  { text: '15s', value: 15 * 1000 },
+  { text: '20s', value: 20 * 1000 },
+  { text: '25s', value: 25 * 1000 },
+  { text: '30s', value: 30 * 1000 },
+  { text: '45s', value: 45 * 1000 },
+  { text: '1min', value: 60 * 1000 },
 ]
 </script>
 
 <template>
   <VanCellGroup inset>
-    <VanCell title="视频播放器内核" center is-link>
+    <VanCell title="Video Player Core" center is-link>
       <template #value>
         <SimplePicker v-model:value="configs.data.value.videoPlayerCore" :columns="videoPlayerCorePickerData">
           <VanField :model-value="VideoPlayerCoreLabels[configs.data.value.videoPlayerCore!]" input-align="right" readonly />
@@ -55,7 +55,7 @@ const videoPlayerBufferTimePickerData = [
       </template>
     </VanCell>
 
-    <VanCell title="渲染方式" center is-link>
+    <VanCell title="Render Mode" center is-link>
       <template #value>
         <SimplePicker v-model:value="configs.data.value.videoPlayerRenderMode" :columns="videoPlayerRenderModePickerData">
           <VanField
@@ -66,7 +66,7 @@ const videoPlayerBufferTimePickerData = [
       </template>
     </VanCell>
 
-    <VanCell title="全局显示模式" center is-link>
+    <VanCell title="Global Display Mode" center is-link>
       <template #value>
         <SimplePicker v-model:value="configs.data.value.videoPlayerDisplayMode" :columns="videoPlayerDisplayModePickerData">
           <VanField
@@ -77,7 +77,7 @@ const videoPlayerBufferTimePickerData = [
       </template>
     </VanCell>
 
-    <VanCell title="加载超时" center is-link>
+    <VanCell title="Load Timeout" center is-link>
       <template #value>
         <SimplePicker v-model:value="configs.data.value.videoPlayerLoadTimeout" :columns="videoPlayerLoadTimeoutPickerData">
           <VanField
@@ -88,7 +88,7 @@ const videoPlayerBufferTimePickerData = [
       </template>
     </VanCell>
 
-    <VanCell title="缓存加载时间" center is-link>
+    <VanCell title="Buffer Time" center is-link>
       <template #value>
         <SimplePicker v-model:value="configs.data.value.videoPlayerBufferTime" :columns="videoPlayerBufferTimePickerData">
           <VanField
@@ -99,7 +99,7 @@ const videoPlayerBufferTimePickerData = [
       </template>
     </VanCell>
 
-    <VanCell title="全局ua" center>
+    <VanCell title="Global UA" center>
       <template #value>
         <VanField v-model="configs.data.value.videoPlayerUserAgent" input-align="right" />
       </template>
@@ -107,10 +107,10 @@ const videoPlayerBufferTimePickerData = [
 
     <VanCell center>
       <template #title>
-        <CellTitle title="自定义headers">
+        <CellTitle title="Custom Headers">
           <template #help>
             <div class="flex flex-col gap-1">
-              <div>示例：</div>
+              <div>Example:</div>
               <div>Header-Name-1: Header-Value-1</div>
               <div>Header-Name-2: Header-Value-2</div>
             </div>
@@ -125,7 +125,7 @@ const videoPlayerBufferTimePickerData = [
 
     <VanCell>
       <VanButton type="primary" block @click="configs.update">
-        更新
+        Update
       </VanButton>
     </VanCell>
   </VanCellGroup>
@@ -140,5 +140,5 @@ const videoPlayerBufferTimePickerData = [
 <route lang="yaml">
 meta:
   layout: default
-  title: 播放器
+  title: Player
 </route>

@@ -10,7 +10,7 @@ const show = ref(false)
     <VanIcon name="info-o" class="op-60" />
   </div>
 
-  <VanDialog v-model:show="show" title="帮助">
+  <VanDialog v-model:show="show" title="Help">
     <div class="overflow-x-auto px-8 py-4">
       <slot name="help">
         {{ help }}

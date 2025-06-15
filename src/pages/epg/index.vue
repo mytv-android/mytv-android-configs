@@ -8,21 +8,21 @@ const epgRefreshTimeThresholdPickerData = [
 
 <template>
   <VanCellGroup inset>
-    <VanCell title="节目单启用" center>
+    <VanCell title="EPG Enable" center>
       <template #value>
         <VanSwitch v-model="configs.data.value.epgEnable" />
       </template>
     </VanCell>
 
-    <VanCell title="跟随订阅源" center>
+    <VanCell title="Follow Source" center>
       <template #value>
         <VanSwitch v-model="configs.data.value.epgSourceFollowIptv" />
       </template>
     </VanCell>
 
-    <VanCell title="自定义节目单" :value="configs.data.value.epgSourceCurrent?.name" is-link center to="epg/epg-source-list" />
+    <VanCell title="Custom EPG" :value="configs.data.value.epgSourceCurrent?.name" is-link center to="epg/epg-source-list" />
 
-    <VanCell title="刷新时间阈值" center is-link>
+    <VanCell title="Refresh Time Threshold" center is-link>
       <template #value>
         <SimplePicker v-model:value="configs.data.value.epgRefreshTimeThreshold" :columns="epgRefreshTimeThresholdPickerData">
           <VanField
@@ -35,7 +35,7 @@ const epgRefreshTimeThresholdPickerData = [
 
     <VanCell>
       <VanButton type="primary" block @click="configs.update">
-        更新
+        Update
       </VanButton>
     </VanCell>
   </VanCellGroup>
@@ -50,5 +50,5 @@ const epgRefreshTimeThresholdPickerData = [
 <route lang="yaml">
 meta:
   layout: default
-  title: 节目单
+  title: EPG
 </route>

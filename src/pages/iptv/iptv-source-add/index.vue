@@ -37,17 +37,17 @@ async function addIptvSource() {
 
 <template>
   <VanCellGroup v-if="iptvSource" inset>
-    <VanCell title="类型" center>
+    <VanCell title="Type" center>
       <template #value>
         <VanRadioGroup v-model="iptvSource.type" direction="horizontal" class="justify-end">
           <VanRadio name="url">
-            远程
+            Remote
           </VanRadio>
           <VanRadio name="file">
-            文件
+            File
           </VanRadio>
           <VanRadio name="content">
-            静态
+            Static
           </VanRadio>
           <VanRadio name="xtream">
             XTREAM
@@ -56,13 +56,13 @@ async function addIptvSource() {
       </template>
     </VanCell>
 
-    <VanCell title="名称" center>
+    <VanCell title="Name" center>
       <template #value>
         <VanField v-model="iptvSource.name" input-align="right" />
       </template>
     </VanCell>
 
-    <VanCell v-if="iptvSource.type === 'url' || iptvSource.type === 'xtream'" title="链接" center>
+    <VanCell v-if="iptvSource.type === 'url' || iptvSource.type === 'xtream'" title="URL" center>
       <template #value>
         <VanField v-model="iptvSource.url" input-align="right" />
       </template>
@@ -74,37 +74,37 @@ async function addIptvSource() {
       </template>
     </VanCell>
 
-    <VanCell v-else-if="iptvSource.type === 'file'" title="文件路径" center>
+    <VanCell v-else-if="iptvSource.type === 'file'" title="File Path" center>
       <template #value>
         <VanField v-model="iptvSource.url" input-align="right" />
       </template>
     </VanCell>
 
-    <VanCell v-else-if="iptvSource.type === 'content'" title="内容">
+    <VanCell v-else-if="iptvSource.type === 'content'" title="Content">
       <template #value>
         <VanField v-model="iptvSource.content" type="textarea" rows="5" />
       </template>
     </VanCell>
 
-    <VanCell v-if="iptvSource.type === 'xtream'" title="用户名">
+    <VanCell v-if="iptvSource.type === 'xtream'" title="Username">
       <template #value>
         <VanField v-model="iptvSource.userName" type="textarea" rows="5" />
       </template>
     </VanCell>
 
-    <VanCell v-if="iptvSource.type === 'xtream'" title="密码">
+    <VanCell v-if="iptvSource.type === 'xtream'" title="Password">
       <template #value>
         <VanField v-model="iptvSource.password" type="textarea" rows="5" />
       </template>
     </VanCell>
 
-    <VanCell v-if="iptvSource.type === 'xtream'" title="输出类型">
+    <VanCell v-if="iptvSource.type === 'xtream'" title="Output Type">
       <template #value>
         <VanField v-model="iptvSource.format" type="textarea" rows="5" />
       </template>
     </VanCell>
 
-    <VanCell title="转换JS" center>
+    <VanCell title="Transform JS" center>
       <template #value>
         <VanField v-model="iptvSource.transformJs" type="textarea" rows="5" />
       </template>
@@ -112,7 +112,7 @@ async function addIptvSource() {
 
     <VanCell>
       <VanButton type="primary" block @click="addIptvSource">
-        确认
+        Confirm
       </VanButton>
     </VanCell>
   </VanCellGroup>
@@ -127,5 +127,5 @@ async function addIptvSource() {
 <route lang="yaml">
 meta:
   layout: default
-  title: 添加订阅源
+  title: Add IPTV Source
 </route>

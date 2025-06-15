@@ -42,45 +42,45 @@ async function switchIptvSource() {
 
 <template>
   <VanCellGroup v-if="iptvSource" inset>
-    <VanCell title="名称" center>
+    <VanCell title="Name" center>
       <template #value>
         <VanField v-model="iptvSource.name" input-align="right" />
       </template>
     </VanCell>
 
     <template v-if="iptvSource.sourceType === 1">
-      <VanCell title="文件路径" center>
+      <VanCell title="File Path" center>
         <template #value>
           <VanField v-model="iptvSource.url" input-align="right" />
         </template>
       </VanCell>
 
-      <VanCell title="文件内容">
+      <VanCell title="File Content">
         <template #value>
           <VanField v-model="iptvSource.content" type="textarea" rows="5" />
         </template>
       </VanCell>
     </template>
 
-    <VanCell v-else title="链接" center>
+    <VanCell v-else title="URL" center>
       <template #value>
         <VanField v-model="iptvSource.url" input-align="right" />
       </template>
     </VanCell>
 
-    <VanCell v-if="iptvSource.sourceType === 2" title="用户名">
+    <VanCell v-if="iptvSource.sourceType === 2" title="Username">
       <template #value>
         <VanField v-model="iptvSource.userName" type="textarea" rows="5" />
       </template>
     </VanCell>
 
-    <VanCell v-if="iptvSource.sourceType === 2" title="密码">
+    <VanCell v-if="iptvSource.sourceType === 2" title="Password">
       <template #value>
         <VanField v-model="iptvSource.password" type="textarea" rows="5" />
       </template>
     </VanCell>
 
-    <VanCell v-if="iptvSource.sourceType === 2" title="输出类型">
+    <VanCell v-if="iptvSource.sourceType === 2" title="Output Format">
       <template #value>
         <VanField v-model="iptvSource.format" type="textarea" rows="5" />
       </template>
@@ -92,7 +92,7 @@ async function switchIptvSource() {
       </template>
     </VanCell>
 
-    <VanCell title="转换JS" center>
+    <VanCell title="Transform JS" center>
       <template #value>
         <VanField v-model="iptvSource.transformJs" type="textarea" rows="5" />
       </template>
@@ -101,15 +101,15 @@ async function switchIptvSource() {
     <VanCell>
       <div class="flex gap-4">
         <VanButton type="danger" block @click="deleteIptvSource">
-          删除
+          Delete
         </VanButton>
 
         <VanButton type="primary" block @click="saveIptvSource">
-          更新
+          Update
         </VanButton>
 
         <VanButton type="warning" block @click="switchIptvSource">
-          切换
+          Switch
         </VanButton>
       </div>
     </VanCell>
@@ -125,5 +125,5 @@ async function switchIptvSource() {
 <route lang="yaml">
 meta:
   layout: default
-  title: 订阅源详情
+  title: IPTV Source Detail
 </route>

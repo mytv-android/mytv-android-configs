@@ -23,7 +23,7 @@ function remove(i: number) {
 
     <VanCell>
       <VanButton type="primary" block @click="configs.update">
-        更新
+        Update
       </VanButton>
     </VanCell>
   </VanCellGroup>
@@ -32,5 +32,5 @@ function remove(i: number) {
 <route lang="yaml">
 meta:
   layout: default
-  title: 收藏频道
+  title: Favorite Channels
 </route>

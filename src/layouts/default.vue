@@ -9,7 +9,7 @@ function onClickLeft() {
 
 <template>
   <VanConfigProvider :theme="isDark ? 'dark' : undefined">
-    <VanNavBar :title="route.meta.title" left-text="返回" left-arrow placeholder fixed @click-left="onClickLeft" />
+    <VanNavBar :title="route.meta.title" left-text="Return" left-arrow placeholder fixed @click-left="onClickLeft" />
     <div class="py-4">
       <Suspense>
         <RouterView />

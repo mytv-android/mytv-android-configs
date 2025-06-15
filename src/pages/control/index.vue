@@ -4,19 +4,19 @@ const configs = useConfigsStore()
 
 <template>
   <VanCellGroup inset>
-    <VanCell title="数字选台" center>
+    <VanCell title="Digital Channel Selection" center>
       <template #value>
         <VanSwitch v-model="configs.data.value.iptvChannelNoSelectEnable" />
       </template>
     </VanCell>
 
-    <VanCell title="换台列表首尾循环" center>
+    <VanCell title="Channel List Loop" center>
       <template #value>
         <VanSwitch v-model="configs.data.value.iptvChannelChangeListLoop" />
       </template>
     </VanCell>
 
-    <VanCell title="频道切换跨分组" center>
+    <VanCell title="Cross-group Channel Switching" center>
       <template #value>
         <VanSwitch v-model="configs.data.value.iptvChannelChangeCrossGroup" />
       </template>
@@ -24,7 +24,7 @@ const configs = useConfigsStore()
 
     <VanCell>
       <VanButton type="primary" block @click="configs.update">
-        更新
+        Update
       </VanButton>
     </VanCell>
   </VanCellGroup>
@@ -33,5 +33,5 @@ const configs = useConfigsStore()
 <route lang="yaml">
 meta:
   layout: default
-  title: 控制
+  title: Control
 </route>

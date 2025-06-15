@@ -144,9 +144,9 @@ export enum IptvHybridMode {
 }
 
 export const IptvHybridModeLabels: { [key in IptvHybridMode]: string } = {
-  [IptvHybridMode.DISABLE]: '禁用',
-  [IptvHybridMode.IPTV_FIRST]: 'IPTV优先',
-  [IptvHybridMode.HYBRID_FIRST]: '网页源优先',
+  [IptvHybridMode.DISABLE]: 'Disable',
+  [IptvHybridMode.IPTV_FIRST]: 'IPTV First',
+  [IptvHybridMode.HYBRID_FIRST]: 'Web Source First',
 }
 
 export interface IptvSource {
@@ -192,10 +192,10 @@ export enum UiTimeShowMode {
 }
 
 export const UiTimeShowModeLabels: { [key in UiTimeShowMode]: string } = {
-  [UiTimeShowMode.HIDDEN]: '隐藏',
-  [UiTimeShowMode.ALWAYS]: '常显',
-  [UiTimeShowMode.EVERY_HOUR]: '整点',
-  [UiTimeShowMode.HALF_HOUR]: '半点',
+  [UiTimeShowMode.HIDDEN]: 'Hidden',
+  [UiTimeShowMode.ALWAYS]: 'Always',
+  [UiTimeShowMode.EVERY_HOUR]: 'Every Hour',
+  [UiTimeShowMode.HALF_HOUR]: 'Half Hour',
 }
 
 export enum VideoPlayerCore {
@@ -228,9 +228,9 @@ export enum VideoPlayerDisplayMode {
 }
 
 export const VideoPlayerDisplayModeLabels: { [key in VideoPlayerDisplayMode]: string } = {
-  [VideoPlayerDisplayMode.ORIGINAL]: '原始',
-  [VideoPlayerDisplayMode.FILL]: '填充',
-  [VideoPlayerDisplayMode.CROP]: '裁剪',
+  [VideoPlayerDisplayMode.ORIGINAL]: 'Original',
+  [VideoPlayerDisplayMode.FILL]: 'Fill',
+  [VideoPlayerDisplayMode.CROP]: 'Crop',
   [VideoPlayerDisplayMode.FOUR_THREE]: '4:3',
   [VideoPlayerDisplayMode.SIXTEEN_NINE]: '16:9',
   [VideoPlayerDisplayMode.WIDE]: '2.35:1',
@@ -246,9 +246,9 @@ export enum CloudSyncProvider {
 
 export const CloudSyncProviderLabels: { [key in CloudSyncProvider]: string } = {
   [CloudSyncProvider.GITHUB_GIST]: 'GitHub Gist',
-  [CloudSyncProvider.GITEE_GIST]: 'Gitee 代码片段',
-  [CloudSyncProvider.NETWORK_URL]: '网络链接',
-  [CloudSyncProvider.LOCAL_FILE]: '本地文件',
+  [CloudSyncProvider.GITEE_GIST]: 'Gitee Gist',
+  [CloudSyncProvider.NETWORK_URL]: 'Network URL',
+  [CloudSyncProvider.LOCAL_FILE]: 'Local File',
   [CloudSyncProvider.WEBDAV]: 'WebDAV',
 }
 

@@ -6,12 +6,12 @@ const configs = useConfigsStore()
 const uiTimeShowModePickerData = Object.entries(UiTimeShowModeLabels).map(it => ({ text: it[1], value: it[0] }))
 
 const uiScreenAutoCloseDelayPickerData = [
-  ...Array.from({ length: 6 }, (_, i) => (i + 1) * 5).map(it => ({ text: `${it}秒`, value: it * 1000 })),
-  { text: '不关闭', value: 9223372036854776000 },
+  ...Array.from({ length: 6 }, (_, i) => (i + 1) * 5).map(it => ({ text: `${it}s`, value: it * 1000 })),
+  { text: 'Never close', value: 9223372036854776000 },
 ]
 
 const uiDensityScaleRatioPickerData = [
-  { text: '自适应', value: 0 },
+  { text: 'Auto', value: 0 },
   ...Array.from({ length: 16 }, (_, i) => (i + 5) / 10).map(it => ({ text: `×${it}`, value: it })),
 ]
 
@@ -22,37 +22,37 @@ const uiFontScaleRatioPickerData = [
 
 <template>
   <VanCellGroup inset>
-    <VanCell title="节目进度" center>
+    <VanCell title="Show EPG Progress" center>
       <template #value>
         <VanSwitch v-model="configs.data.value.uiShowEpgProgrammeProgress" />
       </template>
     </VanCell>
 
-    <VanCell title="常驻节目进度" center>
+    <VanCell title="Permanent EPG Progress" center>
       <template #value>
         <VanSwitch v-model="configs.data.value.uiShowEpgProgrammePermanentProgress" />
       </template>
     </VanCell>
 
-    <VanCell title="台标显示" center>
+    <VanCell title="Show Channel Logo" center>
       <template #value>
         <VanSwitch v-model="configs.data.value.uiShowChannelLogo" />
       </template>
     </VanCell>
 
-    <VanCell title="频道预览" center>
+    <VanCell title="Channel Preview" center>
       <template #value>
         <VanSwitch v-model="configs.data.value.uiShowChannelPreview" />
       </template>
     </VanCell>
 
-    <VanCell title="经典选台界面" center>
+    <VanCell title="Classic Channel Panel" center>
       <template #value>
         <VanSwitch v-model="configs.data.value.uiUseClassicPanelScreen" />
       </template>
     </VanCell>
 
-    <VanCell title="时间显示" center is-link>
+    <VanCell title="Time Display" center is-link>
       <template #value>
         <SimplePicker v-model:value="configs.data.value.uiTimeShowMode" :columns="uiTimeShowModePickerData">
           <VanField :model-value="UiTimeShowModeLabels[configs.data.value.uiTimeShowMode!]" input-align="right" readonly />
@@ -60,7 +60,7 @@ const uiFontScaleRatioPickerData = [
       </template>
     </VanCell>
 
-    <VanCell title="超时自动关闭界面" center is-link>
+    <VanCell title="Auto Close Delay" center is-link>
       <template #value>
         <SimplePicker v-model:value="configs.data.value.uiScreenAutoCloseDelay" :columns="uiScreenAutoCloseDelayPickerData">
           <VanField
@@ -71,7 +71,7 @@ const uiFontScaleRatioPickerData = [
       </template>
     </VanCell>
 
-    <VanCell title="界面整体缩放比例" center is-link>
+    <VanCell title="UI Scale Ratio" center is-link>
       <template #value>
         <SimplePicker v-model:value="configs.data.value.uiDensityScaleRatio" :columns="uiDensityScaleRatioPickerData">
           <VanField
@@ -82,7 +82,7 @@ const uiFontScaleRatioPickerData = [
       </template>
     </VanCell>
 
-    <VanCell title="界面字体缩放比例" center is-link>
+    <VanCell title="Font Scale Ratio" center is-link>
       <template #value>
         <SimplePicker v-model:value="configs.data.value.uiFontScaleRatio" :columns="uiFontScaleRatioPickerData">
           <VanField
@@ -93,7 +93,7 @@ const uiFontScaleRatioPickerData = [
       </template>
     </VanCell>
 
-    <VanCell title="焦点优化" center>
+    <VanCell title="Focus Optimization" center>
       <template #value>
         <VanSwitch v-model="configs.data.value.uiFocusOptimize" />
       </template>
@@ -101,7 +101,7 @@ const uiFontScaleRatioPickerData = [
 
     <VanCell>
       <VanButton type="primary" block @click="configs.update">
-        更新
+        Update
       </VanButton>
     </VanCell>
   </VanCellGroup>
@@ -110,5 +110,5 @@ const uiFontScaleRatioPickerData = [
 <route lang="yaml">
 meta:
   layout: default
-  title: 界面
+  title: UI
 </route>

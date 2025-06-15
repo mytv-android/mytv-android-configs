@@ -16,7 +16,7 @@ function addEpgSource() {
 
     <VanCell>
       <VanButton type="primary" block @click="addEpgSource">
-        添加
+        Add
       </VanButton>
     </VanCell>
   </VanCellGroup>
@@ -31,5 +31,5 @@ function addEpgSource() {
 <route lang="yaml">
 meta:
   layout: default
-  title: 自定义节目单
+  title: Custom EPG List
 </route>

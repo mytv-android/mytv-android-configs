@@ -18,16 +18,16 @@ function addIptvSource() {
           <span class="text-sm">{{ source.name }}</span>
 
           <VanTag v-if="source.sourceType === 1" plain type="warning">
-            本地
+            Local
           </VanTag>
           <VanTag v-else-if="source.sourceType === 2" plain type="danger">
             XTREAM
           </VanTag>
           <VanTag v-else plain type="primary">
-            远程
+            Remote
           </VanTag>
           <VanTag v-if="source.transformJs" plain type="success">
-            转换JS
+            Transform JS
           </VanTag>
         </div>
       </template>
@@ -35,7 +35,7 @@ function addIptvSource() {
 
     <VanCell>
       <VanButton type="primary" block @click="addIptvSource">
-        添加
+        Add
       </VanButton>
     </VanCell>
   </VanCellGroup>
@@ -50,5 +50,5 @@ function addIptvSource() {
 <route lang="yaml">
 meta:
   layout: default
-  title: 自定义订阅源
+  title: Custom IPTV Sources
 </route>

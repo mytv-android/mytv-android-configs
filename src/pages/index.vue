@@ -4,22 +4,22 @@
 <template>
   <div>
     <div class="ml-16px p-20px pt-0 text-32px">
-      电视直播
+      Live TV
     </div>
 
     <VanCellGroup inset>
-      <VanCell title="通用" is-link to="app" />
-      <VanCell title="订阅源" is-link to="iptv" />
-      <VanCell title="节目单" is-link to="epg" />
-      <VanCell title="界面" is-link to="ui" />
-      <VanCell title="控制" is-link to="control" />
-      <VanCell title="播放器" is-link to="player" />
-      <VanCell title="更新" is-link to="update" />
-      <VanCell title="主题" is-link to="theme" />
-      <VanCell title="云同步" is-link to="cloudsync" />
-      <VanCell title="调试" is-link to="debug" />
-      <VanCell title="日志" is-link to="log" />
-      <VanCell title="关于" is-link to="about" />
+      <VanCell title="General" is-link to="app" />
+      <VanCell title="Subscriptions" is-link to="iptv" />
+      <VanCell title="EPG" is-link to="epg" />
+      <VanCell title="UI" is-link to="ui" />
+      <VanCell title="Control" is-link to="control" />
+      <VanCell title="Player" is-link to="player" />
+      <VanCell title="Update" is-link to="update" />
+      <VanCell title="Theme" is-link to="theme" />
+      <VanCell title="Cloud Sync" is-link to="cloudsync" />
+      <VanCell title="Debug" is-link to="debug" />
+      <VanCell title="Log" is-link to="log" />
+      <VanCell title="About" is-link to="about" />
     </VanCellGroup>
   </div>
 </template>

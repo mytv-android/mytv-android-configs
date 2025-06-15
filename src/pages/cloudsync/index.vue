@@ -36,12 +36,12 @@ async function importData() {
     reader.onload = async (e: ProgressEvent<FileReader>) => {
       if (e.target?.result) {
         await AppApi.pushCloudSyncData(JSON.parse(e.target.result as string))
-        showSuccessToast('应用数据导入成功')
+        showSuccessToast('App data imported successfully')
       }
     }
 
     reader.onerror = () => {
-      showFailToast('应用数据读取失败')
+      showFailToast('Failed to read app data')
     }
 
     reader.readAsText(files![0])
@@ -52,13 +52,13 @@ async function importData() {
 <template>
   <div class="flex flex-col gap-4">
     <VanCellGroup inset>
-      <VanCell title="自动拉取" center>
+      <VanCell title="Auto Pull" center>
         <template #value>
           <VanSwitch v-model="configs.data.value.cloudSyncAutoPull" />
         </template>
       </VanCell>
 
-      <VanCell title="云同步服务商" center is-link>
+      <VanCell title="Cloud Sync Provider" center is-link>
         <template #value>
           <SimplePicker v-model:value="configs.data.value.cloudSyncProvider" :columns="cloudSyncProviderPickerData">
             <VanField
@@ -84,13 +84,13 @@ async function importData() {
       </template>
 
       <template v-if="configs.data.value.cloudSyncProvider === CloudSyncProvider.GITEE_GIST">
-        <VanCell title="Gitee 代码片段 Id" center>
+        <VanCell title="Gitee Gist Id" center>
           <template #value>
             <VanField v-model="configs.data.value.cloudSyncGiteeGistId" input-align="right" />
           </template>
         </VanCell>
 
-        <VanCell title="Gitee 代码片段 Token" center>
+        <VanCell title="Gitee Gist Token" center>
           <template #value>
             <VanField v-model="configs.data.value.cloudSyncGiteeGistToken" input-align="right" />
           </template>
@@ -98,7 +98,7 @@ async function importData() {
       </template>
 
       <template v-if="configs.data.value.cloudSyncProvider === CloudSyncProvider.NETWORK_URL">
-        <VanCell title="网络链接" center>
+        <VanCell title="Network URL" center>
           <template #value>
             <VanField v-model="configs.data.value.cloudSyncNetworkUrl" input-align="right" />
           </template>
@@ -106,7 +106,7 @@ async function importData() {
       </template>
 
       <template v-else-if="configs.data.value.cloudSyncProvider === CloudSyncProvider.LOCAL_FILE">
-        <VanCell title="本地文件路径" center>
+        <VanCell title="Local File Path" center>
           <template #value>
             <VanField v-model="configs.data.value.cloudSyncLocalFilePath" input-align="right" />
           </template>
@@ -114,19 +114,19 @@ async function importData() {
       </template>
 
       <template v-else-if="configs.data.value.cloudSyncProvider === CloudSyncProvider.WEBDAV">
-        <VanCell title="WebDAV 地址" center>
+        <VanCell title="WebDAV URL" center>
           <template #value>
             <VanField v-model="configs.data.value.cloudSyncWebDavUrl" input-align="right" />
           </template>
         </VanCell>
 
-        <VanCell title="WebDAV 用户名" center>
+        <VanCell title="WebDAV Username" center>
           <template #value>
             <VanField v-model="configs.data.value.cloudSyncWebDavUsername" input-align="right" />
           </template>
         </VanCell>
 
-        <VanCell title="WebDAV 密码" center>
+        <VanCell title="WebDAV Password" center>
           <template #value>
             <VanField v-model="configs.data.value.cloudSyncWebDavPassword" input-align="right" />
           </template>
@@ -135,14 +135,14 @@ async function importData() {
 
       <VanCell>
         <VanButton type="primary" block @click="configs.update">
-          更新
+          Update
         </VanButton>
       </VanCell>
     </VanCellGroup>
 
     <VanCellGroup inset>
-      <VanCell title="导入应用数据" value="" center is-link @click="importData" />
-      <VanCell title="导出应用数据" value="" center is-link @click="exportData" />
+      <VanCell title="Import App Data" value="" center is-link @click="importData" />
+      <VanCell title="Export App Data" value="" center is-link @click="exportData" />
     </VanCellGroup>
   </div>
 </template>
@@ -156,5 +156,5 @@ async function importData() {
 <route lang="yaml">
 meta:
   layout: default
-  title: 云同步
+  title: Cloud Sync
 </route>

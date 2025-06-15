@@ -4,10 +4,10 @@ import { IptvHybridModeLabels } from '~/apis/app'
 const configs = useConfigsStore()
 
 const iptvSourceCacheTimePickerData = [
-  { text: '不缓存', value: 0 },
-  ...Array.from({ length: 23 }, (_, i) => i + 1).map(it => ({ text: `${it}小时`, value: it * 1000 * 60 * 60 })),
-  ...Array.from({ length: 15 }, (_, i) => i + 1).map(it => ({ text: `${it}天`, value: it * 24 * 1000 * 60 * 60 })),
-  { text: '永久', value: 9223372036854776000 },
+  { text: 'No Cache', value: 0 },
+  ...Array.from({ length: 23 }, (_, i) => i + 1).map(it => ({ text: `${it} hour${it > 1 ? 's' : ''}`, value: it * 1000 * 60 * 60 })),
+  ...Array.from({ length: 15 }, (_, i) => i + 1).map(it => ({ text: `${it} day${it > 1 ? 's' : ''}`, value: it * 24 * 1000 * 60 * 60 })),
+  { text: 'Permanent', value: 9223372036854776000 },
 ]
 
 const iptvHybridModePickerData = Object.entries(IptvHybridModeLabels).map(it => ({ text: it[1], value: it[0] }))
@@ -15,24 +15,24 @@ const iptvHybridModePickerData = Object.entries(IptvHybridModeLabels).map(it => 
 
 <template>
   <VanCellGroup inset>
-    <VanCell title="自定义订阅源" is-link center to="iptv/iptv-source-list">
+    <VanCell title="Custom Subscription Source" is-link center to="iptv/iptv-source-list">
       <template #value>
         <div class="flex items-center justify-end gap-2">
           <VanTag v-if="configs.data.value.iptvSourceCurrent?.sourceType === 1" plain type="warning" class="flex-none">
-            本地
+            Local
           </VanTag>
           <VanTag v-else-if="configs.data.value.iptvSourceCurrent?.sourceType === 2" plain type="danger" class="flex-none">
             XTREAM
           </VanTag>
           <VanTag v-else plain type="primary" class="flex-none">
-            远程
+            Remote
           </VanTag>
           {{ configs.data.value.iptvSourceCurrent?.name }}
         </div>
       </template>
     </VanCell>
 
-    <VanCell title="订阅源缓存时间" center is-link>
+    <VanCell title="Source Cache Time" center is-link>
       <template #value>
         <SimplePicker v-model:value="configs.data.value.iptvSourceCacheTime" :columns="iptvSourceCacheTimePickerData">
           <VanField
@@ -43,11 +43,11 @@ const iptvHybridModePickerData = Object.entries(IptvHybridModeLabels).map(it => 
       </template>
     </VanCell>
 
-    <!-- <VanCell title="频道分组管理" value="" center is-link to="iptv/channel-group" /> -->
+    <!-- <VanCell title="Channel Group Management" value="" center is-link to="iptv/channel-group" /> -->
 
-    <VanCell title="频道别名" value="" center is-link to="iptv/channel-alias" />
+    <VanCell title="Channel Alias" value="" center is-link to="iptv/channel-alias" />
 
-    <VanCell title="相似频道合并" center>
+    <VanCell title="Merge Similar Channels" center>
       <template #value>
         <VanSwitch v-model="configs.data.value.iptvSimilarChannelMerge" />
       </template>
@@ -55,13 +55,13 @@ const iptvHybridModePickerData = Object.entries(IptvHybridModeLabels).map(it => 
 
     <VanCell center>
       <template #title>
-        <CellTitle title="频道图标提供">
+        <CellTitle title="Channel Logo Provider">
           <template #help>
             <div class="flex flex-col gap-1">
-              <div>格式：</div>
-              <div>{name} - 保持不变</div>
-              <div>{name|lowercase} - 小写</div>
-              <div>{name|uppercase} - 大写</div>
+              <div>Format:</div>
+              <div>{name} - Keep unchanged</div>
+              <div>{name|lowercase} - Lowercase</div>
+              <div>{name|uppercase} - Uppercase</div>
             </div>
           </template>
         </CellTitle>
@@ -74,7 +74,7 @@ const iptvHybridModePickerData = Object.entries(IptvHybridModeLabels).map(it => 
 
     <VanCell center>
       <template #title>
-        <CellTitle title="网页源央视频Cookie">
+        <CellTitle title="Web Source Yangshipin Cookie">
         </CellTitle>
       </template>
 
@@ -83,7 +83,7 @@ const iptvHybridModePickerData = Object.entries(IptvHybridModeLabels).map(it => 
       </template>
     </VanCell>
 
-    <VanCell title="自动添加网页源" center is-link>
+    <VanCell title="Auto Add Web Source" center is-link>
       <template #value>
         <SimplePicker v-model:value="configs.data.value.iptvHybridMode" :columns="iptvHybridModePickerData">
           <VanField :model-value="IptvHybridModeLabels[configs.data.value.iptvHybridMode!]" input-align="right" readonly />
@@ -92,13 +92,13 @@ const iptvHybridModePickerData = Object.entries(IptvHybridModeLabels).map(it => 
     </VanCell>
 
     <VanCell
-      title="收藏频道" :value="`共${configs.data.value.iptvChannelFavoriteList?.value.length}个`" is-link
+      title="Favorite Channels" :value="`Total ${configs.data.value.iptvChannelFavoriteList?.value.length}`" is-link
       to="iptv/favorites"
     />
 
     <VanCell>
       <VanButton type="primary" block @click="configs.update">
-        更新
+        Update
       </VanButton>
     </VanCell>
   </VanCellGroup>
@@ -113,5 +113,5 @@ const iptvHybridModePickerData = Object.entries(IptvHybridModeLabels).map(it => 
 <route lang="yaml">
 meta:
   layout: default
-  title: 订阅源
+  title: Subscription Source
 </route>

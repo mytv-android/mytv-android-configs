@@ -28,13 +28,13 @@ async function switchEpgSource() {
 
 <template>
   <VanCellGroup v-if="epgSource" inset>
-    <VanCell title="名称" center>
+    <VanCell title="Name" center>
       <template #value>
         <VanField v-model="epgSource.name" input-align="right" />
       </template>
     </VanCell>
 
-    <VanCell title="链接" center>
+    <VanCell title="URL" center>
       <template #value>
         <VanField v-model="epgSource.url" input-align="right" />
       </template>
@@ -43,15 +43,15 @@ async function switchEpgSource() {
     <VanCell>
       <div class="flex gap-4">
         <VanButton type="danger" block @click="deleteEpgSource">
-          删除
+          Delete
         </VanButton>
 
         <VanButton type="primary" block @click="saveEpgSource">
-          更新
+          Update
         </VanButton>
 
         <VanButton type="warning" block @click="switchEpgSource">
-          切换
+          Switch
         </VanButton>
       </div>
     </VanCell>
@@ -67,5 +67,5 @@ async function switchEpgSource() {
 <route lang="yaml">
 meta:
   layout: default
-  title: 节目单详情
+  title: EPG Source Detail
 </route>

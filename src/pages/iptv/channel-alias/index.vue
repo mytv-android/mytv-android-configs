@@ -4,7 +4,7 @@ import { AppApi } from '~/apis/app'
 
 const channelAlias = ref<string>()
 const channelAliasExample = JSON.stringify({
-  __suffix: ['-高码', '-HD'],
+  __suffix: ['-HighBitrate', '-HD'],
   CCTV1: ['CCTV1HD', 'CCTV1 HD'],
 }, null, 2)
 
@@ -19,7 +19,7 @@ async function save() {
   }
   catch (ex: unknown) {
     console.error(ex)
-    showFailToast({ message: '频道别名 格式错误' })
+    showFailToast({ message: 'Channel alias format error' })
   }
 }
 </script>
@@ -32,7 +32,7 @@ async function save() {
 
     <VanCell>
       <VanButton type="primary" block @click="save">
-        确认
+        Confirm
       </VanButton>
     </VanCell>
   </VanCellGroup>
@@ -47,5 +47,5 @@ async function save() {
 <route lang="yaml">
 meta:
   layout: default
-  title: 频道别名
+  title: Channel Alias
 </route>

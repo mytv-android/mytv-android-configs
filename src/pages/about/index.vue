@@ -11,11 +11,11 @@ onMounted(async () => {
 
 <template>
   <VanCellGroup v-if="about" inset>
-    <VanCell title="应用标识" :value="`${about.applicationId}_${about.flavor}_${about.buildType}`" />
-    <VanCell title="应用版本" :value="`${about.versionName}(${about.versionCode})`" />
+    <VanCell title="App ID" :value="`${about.applicationId}_${about.flavor}_${about.buildType}`" />
+    <VanCell title="App Version" :value="`${about.versionName}(${about.versionCode})`" />
 
-    <VanCell title="设备名称" :value="about.deviceName" />
-    <VanCell title="设备ID" :value="about.deviceId" />
+    <VanCell title="Device Name" :value="about.deviceName" />
+    <VanCell title="Device ID" :value="about.deviceId" />
   </VanCellGroup>
 </template>
 
@@ -28,5 +28,5 @@ onMounted(async () => {
 <route lang="yaml">
 meta:
   layout: default
-  title: 关于
+  title: About
 </route>

@@ -4,13 +4,13 @@ const configs = useConfigsStore()
 
 <template>
   <VanCellGroup inset>
-    <VanCell title="开机自启" center>
+    <VanCell title="Boot Launch" center>
       <template #value>
         <VanSwitch v-model="configs.data.value.appBootLaunch" />
       </template>
     </VanCell>
 
-    <VanCell title="打开直接进入直播" center>
+    <VanCell title="Start Directly in Live" center>
       <template #value>
         <VanSwitch
           :model-value="configs.data.value.appStartupScreen === 'Live'"
@@ -19,7 +19,7 @@ const configs = useConfigsStore()
       </template>
     </VanCell>
 
-    <VanCell title="画中画" center>
+    <VanCell title="Picture-in-Picture" center>
       <template #value>
         <VanSwitch v-model="configs.data.value.appPipEnable" />
       </template>
@@ -27,7 +27,7 @@ const configs = useConfigsStore()
 
     <VanCell>
       <VanButton type="primary" block @click="configs.update">
-        更新
+        Update
       </VanButton>
     </VanCell>
   </VanCellGroup>
@@ -36,5 +36,5 @@ const configs = useConfigsStore()
 <route lang="yaml">
 meta:
   layout: default
-  title: 通用
+  title: General
 </route>

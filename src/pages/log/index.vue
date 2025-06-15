@@ -32,5 +32,5 @@ onMounted(async () => {
 <route lang="yaml">
 meta:
   layout: default
-  title: 日志
+  title: Log
 </route>
